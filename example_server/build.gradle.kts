@@ -16,6 +16,10 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 configurations {
     compileOnly {
         extendsFrom(configurations.annotationProcessor.get())
+
+    }
+    all {
+        exclude("org.springframework.boot", "spring-boot-starter-logging")
     }
 }
 
@@ -25,9 +29,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
+//    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-logging")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
